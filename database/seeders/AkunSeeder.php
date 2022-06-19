@@ -22,7 +22,7 @@ class AkunSeeder extends Seeder
                'name'=>'ini akun Admin',
                'email'=>'admin@example.com',
                 'level'=>'admin',
-               'password'=> bcrypt('123456'),
+               'password'=> bcrypt('12345678'),
                'Remember_token' => Str::random(60)
             ],
             [
@@ -30,7 +30,7 @@ class AkunSeeder extends Seeder
                'name'=>'ini akun petugas (non admin)',
                'email'=>'user@example.com',
                 'level'=>'petugas',
-               'password'=> bcrypt('123456'),
+               'password'=> bcrypt('12345678'),
                'Remember_token' => Str::random(60)
             ],
             [
@@ -38,7 +38,7 @@ class AkunSeeder extends Seeder
                'name'=>'ini akun petugas (non admin)',
                'email'=>'petugas1@example.com',
                 'level'=>'petugas',
-               'password'=> bcrypt('123456'),
+               'password'=> bcrypt('12345678'),
                'Remember_token' => Str::random(60)
             ],
             [
@@ -46,7 +46,7 @@ class AkunSeeder extends Seeder
                'name'=>'ini akun petugas (non admin)',
                'email'=>'petugas2@example.com',
                 'level'=>'petugas',
-               'password'=> bcrypt('123456'),
+               'password'=> bcrypt('12345678'),
                'Remember_token' => Str::random(60)
             ],
             [
@@ -54,7 +54,7 @@ class AkunSeeder extends Seeder
                'name'=>'ini akun Customer (non admin)',
                'email'=>'petugas3@example.com',
                 'level'=>'petugas',
-               'password'=> bcrypt('123456'),
+               'password'=> bcrypt('12345678'),
                'Remember_token' => Str::random(60)
             ],
             [
@@ -62,7 +62,7 @@ class AkunSeeder extends Seeder
                'name'=>'ini akun petugas (non admin)',
                'email'=>'petugas4@example.com',
                 'level'=>'petugas',
-               'password'=> bcrypt('123456'),
+               'password'=> bcrypt('12345678'),
                'Remember_token' => Str::random(60)
             ],
             [
@@ -70,7 +70,7 @@ class AkunSeeder extends Seeder
                'name'=>'ini akun Customer (non admin)',
                'email'=>'petugas5@example.com',
                 'level'=>'petugas',
-               'password'=> bcrypt('123456'),
+               'password'=> bcrypt('12345678'),
                'Remember_token' => Str::random(60)
             ],
             [
@@ -78,7 +78,7 @@ class AkunSeeder extends Seeder
                'name'=>'ini akun Customer (non admin)',
                'email'=>'otniel@example.com',
                 'level'=>'pelanggan',
-               'password'=> bcrypt('123456'),
+               'password'=> bcrypt('12345678'),
                'Remember_token' => Str::random(60),
             ],
         ];
