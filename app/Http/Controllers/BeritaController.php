@@ -42,20 +42,38 @@ class BeritaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'tgl_berita' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048',
-            'description' => 'required',
-            'sumber' => 'required',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048'
         ]);
-        $path = $request->file('image')->store('public/images');
-        $berita = new Berita();
-        $berita->title = $request->title;
-        $berita->tgl_berita = $request->tgl_berita;
-        $berita->description = $request->description;
-        $berita->sumber = $request->sumber;
-        $berita->image = $path;
-        $berita->save();
+
+        $foto = $request->file('image');
+        
+        $path = $foto->store('product', 'public');
+        
+        $foto->move(public_path('foto/product'), $path);
+
+        // $request->validate([
+        //     'title' => 'required',
+        //     'tgl_berita' => 'required',
+        //     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048',
+        //     'description' => 'required',
+        //     'sumber' => 'required',
+        // ]);
+        // $path = $request->file('image')->store('public/images');
+        // $berita = new Berita();
+        // $berita->title = $request->title;
+        // $berita->tgl_berita = $request->tgl_berita;
+        // $berita->description = $request->description;
+        // $berita->sumber = $request->sumber;
+        // $berita->image = $path;
+        // $berita->save();
+
+        Berita::create([
+            'title' => $request->title,
+            'tgl_berita' => $request->tgl_berita,
+            'image' => basename($path),
+            'description' => $request->description,
+            'sumber' => $request->sumber
+        ]);
      
         return redirect()->route('beritas.index')
                         ->with('success','Data berita sudah berhasil dibuat.');
@@ -92,27 +110,42 @@ class BeritaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'title' => 'required',
-            'tgl_berita' => 'required',
-            'description' => 'required',
-            'sumber' => 'required',
-        ]);
+        
+        // $request->validate([
+        //     'title' => 'required',
+        //     'tgl_berita' => 'required',
+        //     'description' => 'required',
+        //     'sumber' => 'required',
+        // ]);
+        
+        // $berita = Berita::find($id);
+        // if($request->hasFile('image')){
+        //     $request->validate([
+        //       'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048',
+        //     ]);
+        //     $path = $request->file('image')->store('public/images');
+        //     $berita->image = $path;
+        // }
+        // $berita->title = $request->title;
+        // $berita->tgl_berita = $request->tgl_berita;
+        // $berita->description = $request->description;
+        // $berita->sumber = $request->sumber;
+        // $berita->save();
+    
+        $foto = $request->file('image');
+        
+        $path = $foto->store('product', 'public');
+        
+        $foto->move(public_path('foto/product'), $path);
         
         $berita = Berita::find($id);
-        if($request->hasFile('image')){
-            $request->validate([
-              'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048',
-            ]);
-            $path = $request->file('image')->store('public/images');
-            $berita->image = $path;
-        }
-        $berita->title = $request->title;
-        $berita->tgl_berita = $request->tgl_berita;
-        $berita->description = $request->description;
-        $berita->sumber = $request->sumber;
-        $berita->save();
-    
+        $berita -> title = $request->title;
+        $berita -> tgl_berita = $request->tgl_berita;
+        $berita -> description = $request->description;
+        $berita -> sumber = $request->sumber;
+        $berita -> image = basename($path);
+        $berita -> save();
+
         return redirect()->route('beritas.index')
                         ->with('success','Data berita sudah berhasil diubah');
     }

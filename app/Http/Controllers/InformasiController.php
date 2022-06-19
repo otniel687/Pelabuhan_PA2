@@ -38,17 +38,34 @@ class InformasiController extends Controller
      */
     public function store(Request $request)
     {
+        // $request->validate([
+        //     'title' => 'required',
+        //     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        //     'description' => 'required',
+        // ]);
+        // $path = $request->file('image')->store('public/images');
+        // $informasi = new Informasi();
+        // $informasi->title = $request->title;
+        // $informasi->description = $request->description;
+        // $informasi->image = $path;
+        // $informasi->save();
+
         $request->validate([
-            'title' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-            'description' => 'required',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048'
         ]);
-        $path = $request->file('image')->store('public/images');
-        $informasi = new Informasi();
-        $informasi->title = $request->title;
-        $informasi->description = $request->description;
-        $informasi->image = $path;
-        $informasi->save();
+
+        $foto = $request->file('image');
+        
+        $path = $foto->store('product', 'public');
+        
+        $foto->move(public_path('foto/product'), $path);
+
+        Informasi::create([
+            'title' => $request->title,
+            'image' => basename($path),
+            'description' => $request->description,
+            'sumber' => $request->sumber
+        ]);
      
         return redirect()->route('informasis.index')
                         ->with('success','Data informasi sudah berhasil dibuat.');
@@ -85,22 +102,34 @@ class InformasiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-        ]);
+        // $request->validate([
+        //     'title' => 'required',
+        //     'description' => 'required',
+        // ]);
         
-        $informasi =Informasi::find($id);
-        if($request->hasFile('image')){
-            $request->validate([
-              'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-            ]);
-            $path = $request->file('image')->store('public/images');
-            $informasi->image = $path;
-        }
-        $informasi->title = $request->title;
-        $informasi->description = $request->description;
-        $informasi->save();
+        // $informasi =Informasi::find($id);
+        // if($request->hasFile('image')){
+        //     $request->validate([
+        //       'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        //     ]);
+        //     $path = $request->file('image')->store('public/images');
+        //     $informasi->image = $path;
+        // }
+        // $informasi->title = $request->title;
+        // $informasi->description = $request->description;
+        // $informasi->save();
+
+        $foto = $request->file('image');
+        
+        $path = $foto->store('product', 'public');
+        
+        $foto->move(public_path('foto/product'), $path);
+
+        $berita = Informasi::find($id);
+        $berita -> title = $request->title;
+        $berita -> description = $request->description;
+        $berita -> image = basename($path);
+        $berita -> save();
     
         return redirect()->route('informasis.index')
                         ->with('success','Data informasi sudah berhasil diubah');

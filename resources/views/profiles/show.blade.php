@@ -36,9 +36,7 @@
                 </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-
-                <img src="{{ Storage::url($profile->image) }}" height="200"  alt="" />
-
+                    <img src="/foto/product/{{$profile->image}}" height="200" alt="" />
                 </div>
             </div>
               <button type="submit" class="btn btn-primary ml-3">Submit</button>

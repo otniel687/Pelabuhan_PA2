@@ -41,6 +41,15 @@
         background-color: #367dae;
         height: 20vh;
       }
+
+      @media screen and (max-width: 920px) {
+          .bgimg {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: #367dae;
+            height: 2px;
+          }
+      }
     </style>
   </head>
   <body>

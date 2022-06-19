@@ -5,20 +5,14 @@
 @section('content')
   <div class="container">
       <div class="row">
-        <!--
-
-Photos from unsplash.com
-
-Follow me on
-Dribbble: https://dribbble.com/supahfunk
-Twitter: https://twitter.com/supahfunk
-Codepen: https://codepen.io/supah/
-
--->
-        <div class="gallery" data-aos="fade-up">
+        <div class="gallery">
            @foreach ($galeris as $galeri)
           <figure>
-            <img src="{{ Storage::url($galeri->image) }}" alt="" />
+            <div class="row">
+              <div class="col-lg-3">
+                <img src="/foto/product/{{$galeri->image}}" alt="" />
+              </div>
+            </div>
           </figure>
           @endforeach
           

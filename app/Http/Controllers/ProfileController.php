@@ -14,10 +14,10 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $data['profiles'] = Profile::orderBy('id','desc')->simplePaginate(5);
+        $data['profiles'] = Profile::orderBy('id','desc')->simplePaginate(8);
     
         return view('profiles.index', $data)
-            ->with('i',(request()->input('page',1) - 1) * 5);
+            ->with('i',(request()->input('page',1) - 1) * 8);
     }
 
     /**
@@ -38,17 +38,34 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
+        // $request->validate([
+        //   'title' => 'required',
+        // 'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048',
+        // 'content' => 'required'
+        // ]);
+
         $request->validate([
-          'title' => 'required',
-        'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048',
-        'content' => 'required'
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048'
         ]);
-        $path = $request->file('image')->store('public/images');
-        $profile = new Profile();
-        $profile->title = $request->title;
-        $profile->content = $request->content;
-        $profile->image = $path;
-        $profile->save();
+
+        $foto = $request->file('image');
+        
+        $path = $foto->store('product', 'public');
+        
+        $foto->move(public_path('foto/product'), $path);
+
+        // $path = $request->file('image')->store('public/images');
+        // $profile = new Profile();
+        // $profile->title = $request->title;
+        // $profile->content = $request->content;
+        // $profile->image = $path;
+        // $profile->save();
+
+        Profile::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'image' => basename($path)
+        ]);
     
         return redirect()->route('profiles.index')
                         ->with('success','Postingan telah dibuat');
@@ -85,22 +102,34 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'title' => 'required',
-        ]);
+        // $request->validate([
+        //     'title' => 'required',
+        // ]);
         
-        $profile = Profile::find($id);
-        if($request->hasFile('image')){
-            $request->validate([
-              'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048',
-            ]);
-            $path = $request->file('image')->store('public/images');
-            $profile->image = $path;
-        }
-        $profile->title = $request->title;
-        $profile->content = $request->content;
-        $profile->save();
+        // $profile = Profile::find($id);
+        // if($request->hasFile('image')){
+        //     $request->validate([
+        //       'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048',
+        //     ]);
+        //     $path = $request->file('image')->store('public/images');
+        //     $profile->image = $path;
+        // }
+        // $profile->title = $request->title;
+        // $profile->content = $request->content;
+        // $profile->save();
     
+        $foto = $request->file('image');
+        
+        $path = $foto->store('product', 'public');
+        
+        $foto->move(public_path('foto/product'), $path);
+
+        $profile = Profile::find($id);
+        $profile -> title = $request->title;
+        $profile -> content = $request->content;
+        $profile -> image = basename($path);
+        $profile -> save();
+
         return redirect()->route('profiles.index')
                         ->with('success','Postingan telah diubah');
     }

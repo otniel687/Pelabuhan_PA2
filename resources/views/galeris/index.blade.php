@@ -28,7 +28,7 @@
     @foreach ($galeris as $galeri)
     <tr>
         <td>{{++$i}}</td>
-        <td><img src="{{ Storage::url($galeri->image) }}" height="75" width="75" alt="" /></td>
+        <td><img src="/foto/product/{{$galeri->image}}" height="75" width="75" alt="" /></td>
         <td>
             <form action="{{ route('galeris.destroy',$galeri->id) }}" method="POST">
 

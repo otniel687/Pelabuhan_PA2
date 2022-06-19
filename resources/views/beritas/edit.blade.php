@@ -60,7 +60,7 @@
             </div>
             <div class="form-group">
 
-              <img src="{{ Storage::url($berita->image) }}" height="200" width="200" alt="" />
+              <img src="/foto/product/{{$berita->image}}" height="200" alt="" />
 
 
             </div>

@@ -11,8 +11,11 @@
 
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="../node_modules/selectric/public/selectric.css">
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
 
   <!-- Template CSS -->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/authstyle.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
@@ -101,6 +104,14 @@
     </section>
   </div>
 
+  <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="{{asset('/')}}">
+      <i class="fa-solid fa-house"></i>
+    </a>
+    
+  <div class="position-relative">
+    <div class="position-absolute bottom-0 end-0">a</div>
+  </div>
   <!-- General JS Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -118,5 +129,26 @@
 
   <!-- Page Specific JS File -->
   <script src="js/register.js"></script>
+
+  
+ <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+  <!-- Template JS File -->
+  <script src="js/scripts.js"></script>
+
 </body>
 </html>

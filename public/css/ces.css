@@ -74,17 +74,17 @@ img {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -10%);
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
-    margin-top: 30px;
+    margin-top: 100px;
     opacity: 0;
     -webkit-animation: poppy 500ms linear both;
     animation: poppy 500ms linear both;
 }
 .popup figure img {
     position: fixed;
-    width: 550px;
+    width: 600px;
     z-index: 2;
     border-radius: 15px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 6px 30px rgba(0, 0, 0, 0.4);
@@ -142,6 +142,453 @@ img {
     height: 100%;
 }
 
+@media screen and (max-width: 1030px) {
+    .gallery figure img {
+        width: 425px;
+        height: 320px;
+        border-radius: 10px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .gallery figure img {
+        width: 295px;
+        height: 270px;
+        border-radius: 10px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .gallery figure img {
+        width: 315px;
+        height: 300px;
+        border-radius: 10px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .gallery figure {
+        -ms-flex-preferred-size: 33.333%;
+        flex-basis: 33.333%;
+        /* overflow: hidden; */
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .gallery {
+        position: relative;
+        z-index: 2;
+        padding: 5px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    .popup figure img {
+        position: absolute;
+        width: 550px;
+        z-index: 2;
+        border-radius: 15px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 6px 30px rgba(0, 0, 0, 0.4);
+    }
+    .popup figure {
+        position: fixed;
+        top: 50%;
+        left: 55%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -10%);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        margin-top: 100px;
+        opacity: 0;
+        -webkit-animation: poppy 100ms linear both;
+        animation: poppy 100ms linear both;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .gallery figure img {
+        width: 215px;
+        height: 200px;
+        border-radius: 10px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .gallery figure {
+        -ms-flex-preferred-size: 33.333%;
+        flex-basis: 33.333%;
+        /* overflow: hidden; */
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .gallery {
+        position: relative;
+        z-index: 2;
+        padding: 5px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    .popup figure img {
+        position: absolute;
+        width: 550px;
+        z-index: 2;
+        border-radius: 15px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 6px 30px rgba(0, 0, 0, 0.4);
+    }
+    .popup figure {
+        position: fixed;
+        top: 50%;
+        left: 55%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -10%);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        margin-top: 100px;
+        opacity: 0;
+        -webkit-animation: poppy 100ms linear both;
+        animation: poppy 100ms linear both;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .gallery figure img {
+        width: 245px;
+        height: 220px;
+        border-radius: 10px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .gallery figure {
+        -ms-flex-preferred-size: 33.333%;
+        flex-basis: 33.333%;
+        /* overflow: hidden; */
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .gallery {
+        position: relative;
+        z-index: 2;
+        padding: 5px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    .popup figure img {
+        position: absolute;
+        width: 410px;
+        z-index: 2;
+        border-radius: 15px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 6px 30px rgba(0, 0, 0, 0.4);
+    }
+    .popup figure {
+        position: fixed;
+        top: 60%;
+        left: 67%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -10%);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        margin-top: 100px;
+        opacity: 0;
+        -webkit-animation: poppy 100ms linear both;
+        animation: poppy 100ms linear both;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .gallery figure img {
+        width: 185px;
+        height: 180px;
+        border-radius: 10px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .gallery figure {
+        -ms-flex-preferred-size: 33.333%;
+        flex-basis: 33.333%;
+        /* overflow: hidden; */
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .gallery {
+        position: relative;
+        z-index: 2;
+        padding: 5px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    .popup figure img {
+        position: absolute;
+        width: 310px;
+        z-index: 2;
+        border-radius: 15px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 6px 30px rgba(0, 0, 0, 0.4);
+    }
+    .popup figure {
+        position: fixed;
+        top: 70%;
+        left: 90%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -10%);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        margin-top: 100px;
+        opacity: 0;
+        -webkit-animation: poppy 100ms linear both;
+        animation: poppy 100ms linear both;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .gallery figure img {
+        width: 175px;
+        height: 160px;
+        border-radius: 10px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .gallery figure {
+        -ms-flex-preferred-size: 33.333%;
+        flex-basis: 33.333%;
+        /* overflow: hidden; */
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .gallery {
+        position: relative;
+        z-index: 2;
+        padding: 5px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    .popup figure img {
+        position: absolute;
+        width: 310px;
+        z-index: 2;
+        border-radius: 15px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 6px 30px rgba(0, 0, 0, 0.4);
+    }
+    .popup figure {
+        position: fixed;
+        top: 50%;
+        left: 85%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -10%);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        margin-top: 100px;
+        opacity: 0;
+        -webkit-animation: poppy 100ms linear both;
+        animation: poppy 100ms linear both;
+    }
+}
+@media screen and (max-width: 385px) {
+    .gallery figure img {
+        width: 155px;
+        height: 140px;
+        border-radius: 10px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    .gallery figure {
+        -ms-flex-preferred-size: 33.333%;
+        flex-basis: 33.333%;
+        /* overflow: hidden; */
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .gallery {
+        position: relative;
+        z-index: 2;
+        padding: 5px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    .popup figure img {
+        position: absolute;
+        width: 310px;
+        z-index: 2;
+        border-radius: 15px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 6px 30px rgba(0, 0, 0, 0.4);
+    }
+    .popup figure {
+        position: fixed;
+        top: 70%;
+        left: 90%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -10%);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        margin-top: 100px;
+        opacity: 0;
+        -webkit-animation: poppy 100ms linear both;
+        animation: poppy 100ms linear both;
+    }
+}
+
+@media screen and (max-width: 365px) {
+    .gallery figure img {
+        width: 155px;
+        height: 140px;
+        border-radius: 10px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    .gallery figure {
+        -ms-flex-preferred-size: 33.333%;
+        flex-basis: 33.333%;
+        /* overflow: hidden; */
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .gallery {
+        position: relative;
+        z-index: 2;
+        padding: 5px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    .popup figure img {
+        position: absolute;
+        width: 290px;
+        z-index: 2;
+        border-radius: 15px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 6px 30px rgba(0, 0, 0, 0.4);
+    }
+    .popup figure {
+        position: fixed;
+        top: 50%;
+        left: 95%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -10%);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        margin-top: 100px;
+        opacity: 0;
+        -webkit-animation: poppy 100ms linear both;
+        animation: poppy 100ms linear both;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .gallery figure img {
+        width: 115px;
+        height: 100px;
+        border-radius: 10px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    .gallery figure {
+        -ms-flex-preferred-size: 33.333%;
+        flex-basis: 33.333%;
+        /* overflow: hidden; */
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .gallery {
+        position: relative;
+        z-index: 2;
+        padding: 5px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    .popup figure img {
+        position: absolute;
+        width: 190px;
+        z-index: 2;
+        border-radius: 15px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 6px 30px rgba(0, 0, 0, 0.4);
+    }
+    .popup figure {
+        position: fixed;
+        top: 60%;
+        left: 125%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -10%);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        margin-top: 100px;
+        opacity: 0;
+        -webkit-animation: poppy 100ms linear both;
+        animation: poppy 100ms linear both;
+    }
+}
 @-webkit-keyframes poppy {
     0% {
         -webkit-transform: matrix3d(

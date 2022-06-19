@@ -34,23 +34,11 @@
         .bgimg {
           background-repeat: no-repeat;
           background-size: cover;
-          background-image: url("{{ Storage::url($home2->image) }}");
-          height: 80vh;
+          background-image: url("/foto/product/{{$home2->image}} ");
+          height: auto;
           }
+          
       </style>
-        {{-- @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif --}}
 
 </head>
      <body>
@@ -62,7 +50,7 @@
               <img src="{{asset('../img/logo.png')}}" alt="Logo" />
               <p>Pelabuhan Mulia Raja Napitupulu</p>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -132,7 +120,7 @@
             <div class="card mb-4">
               <div class="card-body">
                 <div class="gallery">
-                  <img class="card-img-top" width="400" height="350" src="{{ Storage::url($home1->image) }}" alt="..." />
+                  <img class="card-img-top" src="/foto/product/{{$home1->image}}" alt="..." />
                 </div>
               </div>
             </div>
@@ -177,7 +165,7 @@
                 <div class="mb-3">
                   <div class="row">
                     <div class="col-md-4">
-                      <img src="{{ Storage::url($tentang->image) }}" class="img-fluid rounded-start img-lg" alt="..." />
+                      <img src="/foto/product/{{$tentang->image}}" class="img-fluid rounded-start img-lg" alt="..." />
                     </div>
                     <div class="col-md-8">
                       <div class="card-body">
@@ -213,7 +201,7 @@
                   <div class="row g-0">
                     <div class="col">
                       @foreach ($informasi as $data)
-                      <a data-toggle="modal" data-target="#exampleModal"><img src="{{ Storage::url($data->image) }}" class="img-fluid rounded-start" alt="..."  /></a>
+                      <a data-toggle="modal" data-target="#exampleModal"><img src="/foto/product/{{$data->image}}" class="img-fluid rounded-start" alt="..."  /></a>
                        @endforeach
                     </div>
                   </div>
@@ -250,7 +238,7 @@
           </div>
           <div class="modal-body">
 
-              <img src="{{ Storage::url($data->image) }}" class="img-fluid rounded-start" alt="..." />
+              <img src="/foto/product/{{$data->image}}" class="img-fluid rounded-start" alt="..." />
 
           </div>
       </div>

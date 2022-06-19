@@ -31,7 +31,7 @@
             @foreach ($informasis as $informasi)
             <tr>
                 <td>{{ ++$i }}</td>
-                <td><img src="{{ Storage::url($informasi->image) }}" height="75" width="75" alt="" /></td>
+                <td><img src="/foto/product/{{$informasi->image}}" height="75" width="75" alt="" /></td>
                 <td>{{ $informasi->title }}</td>
                 <td>{{ $informasi->description }}</td>
                 <td>

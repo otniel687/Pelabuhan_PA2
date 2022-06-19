@@ -10,7 +10,7 @@
             <!-- Side widget-->
             <div class="card mb-4">
               <div class="card-body">
-                <img class="card-img-top" width="400" height="350" src="{{ Storage::url($tentang1->image) }}" alt="..." />
+                <img class="card-img-top" src="/foto/product/{{$tentang1->image}}" alt="..." />
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@
             <div class="card mb-4">
               <div class="card-body">
                 <br />
-                <img class="card-img-top" width="400" height="350" src="{{ Storage::url($tentang2->image) }}" alt="..." />
+                <img class="card-img-top" src="/foto/product/{{$tentang2->image}}" alt="..." />
               </div>
             </div>
           </div>

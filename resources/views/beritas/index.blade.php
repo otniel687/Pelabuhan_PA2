@@ -31,7 +31,7 @@
         @foreach ($beritas as $berita)
         <tr>
             <td>{{ ++$i }}</td>
-            <td><img src="{{ Storage::url($berita->image) }}" height="75" width="75" alt="" /></td>
+            <td><img src="/foto/product/{{$berita->image}}" height="75" width="75" alt="" /></td>
             <td>{{ $berita->tgl_berita }}</td>
             <td>{{ $berita->title }}</td>
             <td>

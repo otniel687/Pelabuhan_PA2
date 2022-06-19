@@ -15,7 +15,7 @@
                         <div class="text-muted fst-italic mb-2">{{ $tampil->tgl_berita }}</div>
                     </header>
                     <!-- Preview image figure-->
-                    <figure class="mb-4"><img class="img-fluid rounded" src="{{ Storage::url($tampil->image) }}" alt="..." data-aos="fade-up"/></figure>
+                    <figure class="mb-4"><img class="img-fluid rounded" src="/foto/product/{{$tampil->image}}" alt="..." data-aos="fade-up"/></figure>
                     <!-- Post content-->
                     <section class="mb-5" data-aos="fade-up">
                         <p class="fs-5 mb-4">{{ $tampil->description }}</p>

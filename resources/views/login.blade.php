@@ -10,9 +10,12 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- CSS Libraries -->
+  
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
 
   <!-- Template CSS -->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/authstyle.css">
   <link rel="stylesheet" href="css/components.css">
   {{-- <link rel="stylesheet" href="{{asset('css/style_login.css')}} " /> --}}
@@ -70,25 +73,6 @@
                   <div class="form-group">
                     <button type="submit" class="form-control btn btn-primary rounded submit px-3">Masuk</button>
                   </div>
-                  
-                  <!-- <div class="form-group d-md-flex">
-                    <div class="w-50 text-left">
-                      <a href="{{url('register')}}">Register</a>
-                    </div>
-                  </div> -->
-                </form>
-                <div class="text-center mt-2 mb-3">
-                  <div class="text-job text-muted">Atau</div>
-                </div>
-                <!-- <div class="form-group">
-                    <button type="submit" class="form-control btn btn-secondary rounded submit px-3"><span class="fab fa-google"></span> Masuk dengan Google</button>
-                </div> -->
-                <div class="form-group">
-                    <!-- <button type="submit" class="form-control btn btn-block rounded submit px-3"><span class="fab fa-google"></span> Masuk dengan Google</button> -->
-                    <a href="{{ route('google.login') }}" class="form-control btn btn-block rounded submit px-3">
-                        <span class="fab fa-google"></span> Masuk dengan Google
-                    </a>
-                </div>
                 </div>
             </div>
             </div>
@@ -96,15 +80,26 @@
             <div class="mt-2 text-muted text-center">
               Belum punya akun sebelumnya? <a href="{{ route('register') }}">Daftar Akun</a>
             </div>
-            <div class="simple-footer">
-              Copyright &copy; Pelabuhan Mulia Raja Napitupulu 2022
-            </div>
+            
           </div>
         </div>
       </div>
     </section>
   </div>
 
+  
+  <div class="simple-footer">
+    Copyright &copy; Pelabuhan Mulia Raja Napitupulu 2022
+  </div>
+
+  <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="{{asset('/')}}">
+      <i class="fa-solid fa-house"></i>
+    </a>
+    
+  <div class="position-relative">
+    <div class="position-absolute bottom-0 end-0">a</div>
+  </div>
   <!-- General JS Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -113,8 +108,22 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="js/auth.js"></script>
 
-  <!-- JS Libraies -->
+ <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
   <!-- Template JS File -->
   <script src="js/scripts.js"></script>
 

@@ -51,7 +51,7 @@
                 </div>
                 <div class="form-group">
 
-                <img src="{{ Storage::url($profile->image) }}" height="200" width="200" alt="" />
+                <img src="/foto/product/{{$profile->image}}" height="200" alt="" />
 
                 </div>
             </div>

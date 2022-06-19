@@ -313,11 +313,13 @@ h1 {
     }
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 610px) {
     .logo-1 p {
-        font-size: 1rem;
-        line-height: 1.2;
-        font-weight: 700;
+        font-size: 17px;
+        font-weight: 500;
+    }
+    .logo-1 img {
+        width: 50px;
     }
     .btn-masuk {
         display: inline-block;
@@ -327,5 +329,39 @@ h1 {
         border-radius: 16px;
         text-transform: capitalize;
         transition: 0.3s;
+    }
+    .container {
+        padding: 9px;
+    }
+
+    .bgimg {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .logo-1 p {
+        font-size: 13px;
+        line-height: 1.2;
+        font-weight: 500;
+    }
+    .container {
+        padding: 9px;
+    }
+}
+@media screen and (max-width: 300px) {
+    .logo-1 p {
+        font-size: 9px;
+        line-height: 1.2;
+        font-weight: 500;
+    }
+    .container {
+        padding: 9px;
+    }
+    .logo-1 img {
+        width: 40px;
+    }
+    h1 {
+        font-size: 30px;
     }
 }

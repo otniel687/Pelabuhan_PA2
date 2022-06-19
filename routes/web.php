@@ -37,7 +37,8 @@ use App\Http\Controllers\MobilController;
 // });
 
 Route::get('/', [PenggunaController::class,'index']);
-Route::get('berita/show/{id}', 'PenggunaController@show');
+// Route::get('berita/show/{id}', 'PenggunaController@show');
+Route::get('berita/show/{id}', [PenggunaController::class,'show']);
 Route::get('/berita', [PenggunaController::class,'berita']);
 Route::get('/tentang', [PenggunaController::class,'tentang']);
 Route::get('/jadwal', [PenggunaController::class,'jadwal']);

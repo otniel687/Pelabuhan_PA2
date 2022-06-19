@@ -38,16 +38,32 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048',
-        ]);
-        $path = $request->file('image')->store('public/images');
-        $galeri = new Galeri();
-        $galeri->title = $request->title;
-        $galeri->image = $path;
-        $galeri->save();
+        // $request->validate([
+        //     'title' => 'required',
+        //     'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048',
+        // ]);
+        // $path = $request->file('image')->store('public/images');
+        // $galeri = new Galeri();
+        // $galeri->title = $request->title;
+        // $galeri->image = $path;
+        // $galeri->save();
      
+
+        $request->validate([
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048'
+        ]);
+
+        $foto = $request->file('image');
+        
+        $path = $foto->store('product', 'public');
+        
+        $foto->move(public_path('foto/product'), $path);
+
+        Galeri::create([
+            'title' => $request->title,
+            'image' => basename($path)
+        ]);
+
         return redirect()->route('galeris.index')
                         ->with('success','Data galeri sudah berhasil dibuat.');
     }
@@ -83,21 +99,32 @@ class GaleriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'title' => 'required',
-        ]);
+        // $request->validate([
+        //     'title' => 'required',
+        // ]);
         
+        // $galeri = Galeri::find($id);
+        // if($request->hasFile('image')){
+        //     $request->validate([
+        //       'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048',
+        //     ]);
+        //     $path = $request->file('image')->store('public/images');
+        //     $galeri->image = $path;
+        // }
+        // $galeri->title = $request->title;
+        // $galeri->save();
+
+        $foto = $request->file('image');
+        
+        $path = $foto->store('product', 'public');
+        
+        $foto->move(public_path('foto/product'), $path);
+
         $galeri = Galeri::find($id);
-        if($request->hasFile('image')){
-            $request->validate([
-              'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048',
-            ]);
-            $path = $request->file('image')->store('public/images');
-            $galeri->image = $path;
-        }
         $galeri->title = $request->title;
+        $galeri -> image = basename($path);
         $galeri->save();
-    
+
         return redirect()->route('galeris.index')
                         ->with('success','Data galeri sudah berhasil diubah');
     }
