@@ -124,7 +124,40 @@
                 <div class="col"></div>
             </div>
         </div>
-
+ <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type='text/javascript'>
+        $(window).load(function(){
+            $("#jenis").change(function() {
+                console.log($("#jenis option:selected").val());
+                if ($("#jenis option:selected").val() == 'Tidak Berkendara') {
+                    $('#no_polisi').prop('hidden', 'true');
+                } else if ($("#jenis option:selected").val() == 'Gol I (Sepeda Dayung)'){
+                    $('#no_polisi').prop('hidden', 'true');
+                }else if ($("#jenis option:selected").val() == ''){
+                    $('#no_polisi').prop('hidden', 'true');
+                }else {
+                    $('#no_polisi').prop('hidden', false);
+                }
+            });
+        });
+        </script>
+        <script type="text/javascript">
+            var i = 0;
+            $("#dynamic-ar").click(function () {
+                ++i;
+                $("#dynamicAddRemove").append('<tr><td><input type="text" name="addMoreInputFields[' + i +
+                    '][nama]" placeholder="Enter " class="form-control" /></td><td><select name="addMoreInputFields[' + i +
+                    '][jk]" id="" class="center form-control"><option value="">Pilih</option><option value="Laki-Laki">Laki-Laki</option><option value="Perempuan">Perempuan</option></select></td></td><td><input type="text" name="addMoreInputFields[' + i +
+                    '][umur]" placeholder="Enter " class="form-control" /></td><td><input type="text" name="addMoreInputFields[' + i +
+                    '][alamat]" placeholder="Enter " class="form-control" /></td><td><button type="button" class="btn btn-outline-danger remove-input-field">Delete</button></td></tr>'
+                    );
+            });
+            $(document).on('click', '.remove-input-field', function () {
+                $(this).parents('tr').remove();
+            });
+        </script>
 @endsection
 
 <!DOCTYPE html>
@@ -239,39 +272,6 @@
 
         popup.init();
       </script>
-      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script type='text/javascript'>
-        $(window).load(function(){
-            $("#jenis").change(function() {
-                console.log($("#jenis option:selected").val());
-                if ($("#jenis option:selected").val() == 'Tidak Berkendara') {
-                    $('#no_polisi').prop('hidden', 'true');
-                } else if ($("#jenis option:selected").val() == 'Gol I (Sepeda Dayung)'){
-                    $('#no_polisi').prop('hidden', 'true');
-                }else if ($("#jenis option:selected").val() == ''){
-                    $('#no_polisi').prop('hidden', 'true');
-                }else {
-                    $('#no_polisi').prop('hidden', false);
-                }
-            });
-        });
-        </script>
-        <script type="text/javascript">
-            var i = 0;
-            $("#dynamic-ar").click(function () {
-                ++i;
-                $("#dynamicAddRemove").append('<tr><td><input type="text" name="addMoreInputFields[' + i +
-                    '][nama]" placeholder="Enter " class="form-control" /></td><td><select name="addMoreInputFields[' + i +
-                    '][jk]" id="" class="center form-control"><option value="">Pilih</option><option value="Laki-Laki">Laki-Laki</option><option value="Perempuan">Perempuan</option></select></td></td><td><input type="text" name="addMoreInputFields[' + i +
-                    '][umur]" placeholder="Enter " class="form-control" /></td><td><input type="text" name="addMoreInputFields[' + i +
-                    '][alamat]" placeholder="Enter " class="form-control" /></td><td><button type="button" class="btn btn-outline-danger remove-input-field">Delete</button></td></tr>'
-                    );
-            });
-            $(document).on('click', '.remove-input-field', function () {
-                $(this).parents('tr').remove();
-            });
-        </script>
+     
   </body>
 </html>
