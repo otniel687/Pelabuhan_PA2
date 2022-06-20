@@ -25,19 +25,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12 mt-3">
                 <div class="form-group">
                     <strong>Nama:</strong>
-                    <input type="text" class="form-control text-start" name="name" disabled value="{{ $user->name }}">
-                    @error('name')
-                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
+                    <input type="text" class="form-control text-start" disabled value="{{ $user->name }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Username:</strong>
-                    <input type="text" class="form-control text-start" name="username" disabled value="{{ $user->username }}">
-                    @error('username')
-                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
+                    <input type="text" class="form-control text-start" disabled value="{{ $user->username }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">

@@ -36,20 +36,20 @@ class KendaraanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+     public function store(Request $request)
     {
         $request->validate([
             'tanggal' => 'required',
             'waktu' => 'required',
             'nama' => 'required',
             'jenis' => 'required',
-            'no_polisi' => 'nullable'
+            'no_polisi' => 'required'
         ]);
 
         Kendaraan::create($request->all());
 
         return redirect()->route('kendaraans.index')
-            ->with('success', 'Data kendaraan sudah berhasil dibuat.');
+            ->with('success', 'Kendaraan created successfully.');
     }
 
     /**
@@ -84,7 +84,7 @@ class KendaraanController extends Controller
     public function update(Request $request, Kendaraan $kendaraan)
     {
         $request->validate([
-            'tanggal',
+            'tanggal' => 'required',
             'waktu' => 'required',
             'nama' => 'required',
             'jenis' => 'required',

@@ -45,7 +45,7 @@ class ProfileController extends Controller
         // ]);
 
         $request->validate([
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048'
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
         ]);
 
         $foto = $request->file('image');
@@ -118,16 +118,23 @@ class ProfileController extends Controller
         // $profile->content = $request->content;
         // $profile->save();
     
-        $foto = $request->file('image');
         
-        $path = $foto->store('product', 'public');
-        
-        $foto->move(public_path('foto/product'), $path);
 
         $profile = Profile::find($id);
         $profile -> title = $request->title;
         $profile -> content = $request->content;
-        $profile -> image = basename($path);
+         if($request->hasFile('image')){
+            $request->validate([
+              'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048',
+            ]);
+            $foto = $request->file('image');
+        
+            $path = $foto->store('product', 'public');
+
+            $foto->move(public_path('foto/product'), $path);
+
+            $profile -> image = basename($path);
+        }
         $profile -> save();
 
         return redirect()->route('profiles.index')

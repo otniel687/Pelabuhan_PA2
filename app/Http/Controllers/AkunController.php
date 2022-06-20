@@ -90,9 +90,6 @@ class AkunController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'name'          => 'required',
-            'username'      => 'required',
-            'email'         => 'required',
             'password'      => 'required'
         ]);
         $user->update($request->all());

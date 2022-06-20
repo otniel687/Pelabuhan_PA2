@@ -1,12 +1,15 @@
 @extends('layouts.adm')
 @section('title', 'Daftar Kendaraan | Admin')
-@section('judul', 'Tambah Data  Kendaraan')
+@section('judul', 'Data  Kendaraan')
 @section('content')
     <div class="container mt-2">
             <div class="row">
                 <div class="col-lg-12 margin-tb">
+                    <div class="pull-left mb-2">
+                        <h2>Add New Post</h2>
+                    </div>
                     <div class="pull-right">
-                        <a class="btn btn-primary" href="{{ route('kendaraans.index') }}"> Kembali</a>
+                        <a class="btn btn-primary" href="{{ route('kendaraans.index') }}"> Back</a>
                     </div>
                 </div>
             </div>
@@ -15,11 +18,11 @@
                         {{ session('status') }}
                     </div>
                 @endif
-
+                
                 <form action="{{ route('kendaraans.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-
-
+                
+                    
                     <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
@@ -73,7 +76,7 @@
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </div>
-
+                
                 </form>
             </div>
 @endsection

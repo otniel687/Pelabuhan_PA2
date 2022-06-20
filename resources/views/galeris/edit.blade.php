@@ -24,15 +24,6 @@
         @method('PUT')
 
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Post Title:</strong>
-                    <input type="text" name="title" value="{{ $galeri->title }}" class="form-control" placeholder="Post Title">
-                    @error('title')
-                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
-                </div>
-            </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Post Image:</strong>
@@ -43,8 +34,7 @@
             </div>
             <div class="form-group">
 
-              <img src="{{ Storage::url($galeri->image) }}" height="200" width="200" alt="" />
-
+              <img src="/foto/product/{{$galeri->image}}" height="300"  alt="" />
 
             </div>
         </div>

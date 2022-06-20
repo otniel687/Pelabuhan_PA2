@@ -36,8 +36,8 @@
                     <a class="btn btn-primary" href="{{ route('profiles.edit',$profile->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')
-
-                    <button type="submit" class="btn btn-danger">Hapus</button>
+{{-- 
+                    <button type="submit" class="btn btn-danger">Hapus</button> --}}
                 </form>
             </td>
         </tr>

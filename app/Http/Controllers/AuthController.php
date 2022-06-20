@@ -74,7 +74,7 @@ class AuthController extends Controller
             'remember_token' => Str::random(60),
         ]);
         
-        return redirect()->intended('login');
+        return redirect()->intended('pesan');
     }
 
     public function logout(Request $request)

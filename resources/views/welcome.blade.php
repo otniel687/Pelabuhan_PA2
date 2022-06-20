@@ -5,10 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <link rel="icon" href="{{asset('Img/logo.png')}} " />
         <title>Pelabuhan Mulia Raja Napitupulu</title>
         <!-- Favicons -->
-        <link href="" rel="icon" />
+        <link href="{{asset('../img/logo.png')}}" rel="icon" />
 
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />

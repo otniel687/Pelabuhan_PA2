@@ -119,16 +119,21 @@ class InformasiController extends Controller
         // $informasi->description = $request->description;
         // $informasi->save();
 
-        $foto = $request->file('image');
-        
-        $path = $foto->store('product', 'public');
-        
-        $foto->move(public_path('foto/product'), $path);
-
         $berita = Informasi::find($id);
         $berita -> title = $request->title;
         $berita -> description = $request->description;
-        $berita -> image = basename($path);
+         if($request->hasFile('image')){
+            $request->validate([
+              'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:20048',
+            ]);
+            $foto = $request->file('image');
+        
+            $path = $foto->store('product', 'public');
+
+            $foto->move(public_path('foto/product'), $path);
+
+            $berita -> image = basename($path);
+        }
         $berita -> save();
     
         return redirect()->route('informasis.index')

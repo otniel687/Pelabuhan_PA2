@@ -52,8 +52,7 @@
             </div>
             <div class="form-group">
 
-              <img src="{{ Storage::url($informasi->image) }}" height="200" width="200" alt="" />
-
+             <td><img src="/foto/product/{{$informasi->image}}" height="250" alt="" /></td>
 
             </div>
         </div>

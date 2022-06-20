@@ -25,8 +25,8 @@
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Post Title:</strong>
-                    <input type="text" name="title" value="{{ $profile->title }}" class="form-control" placeholder="Post Title">
+                    <strong>No:</strong>
+                    <input type="text" name="title" value="{{ $profile->title }}" class="form-control" placeholder="Post Title" disabled>
                     @error('title')
                      <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
@@ -34,7 +34,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Post content:</strong>
+                        <strong>Isi konten:</strong>
                         <textarea class="form-control" style="height:150px" name="content" placeholder="Post content">{{ $profile->content }}</textarea>
                         @error('content')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -43,7 +43,7 @@
                 </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Post Image:</strong>
+                    <strong>Gambar:</strong>
                     <input type="file" name="image" class="form-control" placeholder="Post Title">
                     @error('image')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
