@@ -1,6 +1,6 @@
 @extends('layouts.adm')
 @section('title', 'Daftar profile | Admin')
-@section('judul', 'Ubah Data profile')
+@section('judul', 'Data Website')
 @section('content')
     <div class="container mt-2">
 

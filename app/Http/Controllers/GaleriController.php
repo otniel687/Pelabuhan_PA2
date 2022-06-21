@@ -121,7 +121,6 @@ class GaleriController extends Controller
         $foto->move(public_path('foto/product'), $path);
 
         $galeri = Galeri::find($id);
-        $galeri->title = $request->title;
         $galeri -> image = basename($path);
         $galeri->save();
 

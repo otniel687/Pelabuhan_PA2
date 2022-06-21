@@ -52,7 +52,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{{asset('/profiles')}}">
             <i class="fa-solid fa-circle-user"></i>
-            <span>Profil</span>
+            <span>Data Website</span>
           </a>
         </li>
 
