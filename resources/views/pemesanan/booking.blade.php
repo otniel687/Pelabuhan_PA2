@@ -32,6 +32,9 @@
                                       <div class="col-lg-6">
                                           <label for="">Tanggal</label>
                                           <input type="date" class="form-control text-start datepicker" onkeydown="return false" name="tanggal" id="tanggal" value="">
+                                            @error('tanggal')
+                                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                            @enderror
                                           <small class="text-secondary"><span class="text-danger">*</span> Pilih tanggal.</small>
                                       </div>
                                       <div class="col-lg-1"></div>
@@ -42,6 +45,9 @@
                                               <option value="07:00">07:00</option>
                                               <option value="10:00">10:00</option>
                                           </select>
+                                          @error('waktu')
+                                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                            @enderror
                                       </div>
                                   </div>
 
@@ -49,6 +55,9 @@
                                       <div class="col">
                                           <label for="">Nama Pemilik Kendaraan</label>
                                           <input type="text" class="form-control" name="nama"  placeholder="Nama">
+                                          @error('nama')
+                                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                            @enderror
                                       </div>
                                   </div>
 
@@ -70,6 +79,9 @@
                                               <option value="Gol VII (Tronton)">Gol VII (Tronton)</option>
                                               <option value="Gol VIII (Trailer)">Gol VIII (Trailer)</option>
                                           </select>
+                                          @error('jenis')
+                                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                            @enderror
                                       </div>
                                   </div>
 
@@ -94,17 +106,29 @@
                                   </tr>
                                   <tr>
                                       <td><input type="text" name="addMoreInputFields[0][nama]" placeholder="Enter " class="form-control" />
-                                      </td>
+                                        @error('nama')
+                                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                            @enderror
+                                    </td>
 
                                       <td><select name="addMoreInputFields[0][jk]" id="" class="center form-control">
                                               <option value="">Pilih</option>
                                               <option value="Laki-Laki">Laki-Laki</option>
                                               <option value="Perempuan">Perempuan</option>
                                           </select>
+                                          @error('jk')
+                                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                            @enderror
                                       </td>
                                       <td><input type="text" name="addMoreInputFields[0][umur]" placeholder="Enter " class="form-control" />
+                                        @error('umur')
+                                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                            @enderror
                                       </td>
                                       <td><input type="text" name="addMoreInputFields[0][alamat]" placeholder="Enter " class="form-control" />
+                                        @error('alamat')
+                                                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                            @enderror
                                       </td>
                                       <td><button type="button" name="add" id="dynamic-ar" class="btn btn-outline-primary">Tambah </button></td>
                                   </tr>
