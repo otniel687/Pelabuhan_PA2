@@ -20,7 +20,7 @@
         </div>
     @endif
 @endsection
-@section('tabel')
+@section('tabels')
  <thead>
     <tr>
         <th>No</th>

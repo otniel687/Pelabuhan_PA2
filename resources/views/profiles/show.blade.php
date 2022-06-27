@@ -25,12 +25,12 @@
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Post Title:</strong>
+                    <strong>Judul:</strong>
                     <input type="text" name="title" value="{{ $profile->title }}" class="form-control" placeholder="Post Title" disabled>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Post content:</strong>
+                        <strong>Konten Website:</strong>
                         <textarea class="form-control" style="height:150px" name="content" placeholder="Post content" disabled>{{ $profile->content }}</textarea>
                     </div>
                 </div>

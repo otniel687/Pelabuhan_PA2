@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-right mb-2">
-                <a class="btn btn-success" href="{{ route('kendaraans.create') }}"> Buat Data Baru</a>
+                {{-- <a class="btn btn-success" href="{{ route('kendaraans.create') }}"> Buat Data Baru</a> --}}
             </div>
         </div>
     </div>
@@ -20,21 +20,21 @@
 <thead>
     <tr>
     <th>No</th>
+    <th>Kode</th>
     <th>Tanggal</th>
-    <th>Waktu</th>
     <th>Nama</th>
     <th>Jenis Kendaraan</th>
     <th>No Polisi</th>
     <th>Pembayaran</th>
-    <th width="120px">Action</th>
+    {{-- <th width="120px">Action</th> --}}
     </tr>
 </thead>
 <tbody>
     @foreach ($kendaraans as $kendaraan)
     <tr>
         <td>{{++$i }}</td>
+        <td>{{ $kendaraan->kode }}</td>
         <td>{{ $kendaraan->tanggal }}</td>
-        <td>{{ $kendaraan->waktu }}</td>
         <td>{{ $kendaraan->nama }}</td>
         <td>{{ $kendaraan->jenis }}</td>
         <td>{{ $kendaraan->no_polisi }}</td>
@@ -45,7 +45,7 @@
                 <span class="badge badge-pill badge-danger">Belum Bayar</span>
             @endif
         </td>
-        <td class="text-center">
+        {{-- <td class="text-center">
             <form action="{{ route('kendaraans.destroy', $kendaraan->id) }}" method="POST">
 
                 <a class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Edit" href="{{ route('kendaraans.edit',$kendaraan->id) }}">
@@ -59,7 +59,7 @@
                     <i class="bx bx-trash"></i>
                 </button>
             </form>
-        </td>
+        </td> --}}
     </tr>
     @endforeach
 </tbody>

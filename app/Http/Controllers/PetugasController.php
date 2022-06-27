@@ -16,7 +16,7 @@ class PetugasController extends Controller
     public function index()
     {
         // $data['penumpangs'] = Penumpang::orderBy('id','desc')->simplePaginate(5);
-        $data['penumpangs'] = DB::table('penumpangs')->join('pesanans', 'pesanans.id', '=', 'penumpangs.pesanan_id')->simplePaginate(5);
+        $data['penumpangs'] = DB::table('penumpangs')->orderBy('pesanan_id', 'desc')->join('pesanans', 'pesanans.id', '=', 'penumpangs.pesanan_id')->simplePaginate(5);
     
         return view('petugas.index', $data)
             ->with('i',(request()->input('page',1) - 1) * 5);

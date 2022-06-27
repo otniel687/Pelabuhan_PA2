@@ -120,7 +120,7 @@
                                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                             @enderror
                                       </td>
-                                      <td><input type="text" name="addMoreInputFields[0][umur]" placeholder="Enter " class="form-control" />
+                                      <td><input type="number" name="addMoreInputFields[0][umur]" placeholder="Enter " class="form-control" />
                                         @error('umur')
                                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                             @enderror

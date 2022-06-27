@@ -20,7 +20,7 @@
  <thead>
     <tr>
         <th>No</th>
-        <th>Title</th>
+        <th>Judul</th>
         <th width="280px">Action</th>
     </tr>
 </thead>

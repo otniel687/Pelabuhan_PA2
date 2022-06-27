@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-right mb-2">
-                <a class="btn btn-success" href="{{ route('petugas.create') }}"> Buat Data Baru</a>
+                {{-- <a class="btn btn-success" href="{{ route('petugas.create') }}"> Buat Data Baru</a> --}}
             </div>
 
             
@@ -25,18 +25,22 @@
  <thead>
     <tr>
         <th>No</th>
-        <th>Name</th>
+        <th>Kode</th>
+        <th>Tanggal Berangkat</th>
+        <th>Nama</th>
         <th>Jenis Kelamin</th>
         <th>Umur</th>
-        <th>alamat</th>
+        <th>Alamat</th>
         <th>Pembayaran</th>
-        <th width="120px">Action</th>
+        {{-- <th width="120px">Action</th> --}}
     </tr>
 </thead>
 <tbody>
     @foreach ($penumpangs as $penumpang)
         <tr>
             <td>{{ ++$i }}</td>
+            <td>{{ $penumpang->kode }}</td>
+            <td>{{ $penumpang->tanggal }}</td>
             <td>{{ $penumpang->nama }}</td>
             <td>{{ $penumpang->jk }}</td>
             <td>{{ $penumpang->umur }}</td>
@@ -48,7 +52,7 @@
                     <span class="badge badge-pill badge-danger">Belum Bayar</span>
                 @endif
             </td>
-            <td>
+            {{-- <td>
                 <form action="{{ route('petugas.destroy', $penumpang->id) }}" method="POST">
                     <a class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Edit Data" href="{{ route('petugas.edit',$penumpang->id) }}"><i class="bx bx-edit"></i></a>
                     @csrf
@@ -56,7 +60,7 @@
 
                     <button type="submit" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Hapus Data"><i class="bx bx-trash"></i></button>
                 </form>
-            </td>
+            </td> --}}
         </tr>
     @endforeach
 </tbody>
