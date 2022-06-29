@@ -169,13 +169,15 @@
                         <div class="card-body">
                             @yield('content')
 
-                            <table id="example2" class="table table-bordered table-striped">
+                            <div class="table-responsive">
+                              <table class="table table-bordered" id="dataTable">
                                 @yield('tabels')
                             </table>
 
                             <table id="example1" class="table table-bordered table-striped">
                                 @yield('tabel')
                             </table>
+                            </div>
 
                             @yield('links')
                         </div>
@@ -254,6 +256,8 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+<script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+
 <!-- Page specific script -->
 <script>
   $(function () {

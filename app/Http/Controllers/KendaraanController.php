@@ -16,10 +16,11 @@ class KendaraanController extends Controller
     public function index()
     {
         // $data['kendaraans'] = Kendaraan::orderBy('id','desc')->simplePaginate(5);
-        $data['kendaraans'] = DB::table('kendaraans')->orderBy('pesanan_id', 'desc')->join('pesanans', 'pesanans.id', '=', 'kendaraans.pesanan_id')->simplePaginate(5);
+        $data['kendaraans'] = DB::table('kendaraans')->orderBy('pesanan_id', 'desc')
+        ->join('pesanans', 'pesanans.id', '=', 'kendaraans.pesanan_id')->simplePaginate(10);
     
         return view('kendaraans.index', $data)
-            ->with('i',(request()->input('page',1) - 1) * 5);
+            ->with('i',(request()->input('page',1) - 1) * 10);
     }
 
     /**

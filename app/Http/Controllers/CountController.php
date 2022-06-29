@@ -6,6 +6,7 @@ use App\Models\Berita;
 use App\Models\Informasi;
 use App\Models\Kendaraan;
 use App\Models\Penumpang;
+use App\Models\Pesanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,9 +17,10 @@ class CountController extends Controller
         $kendaraan = Kendaraan::count();
         $berita = Berita::count();
         $informasi = Informasi::count();
+        $pesan = Pesanan::count();
         // $penumpang = Penumpang::where('id',$id)->count();
         // $penumpang = DB:table('penumpangs')->count();
-        return view('admin', compact('penumpang', 'kendaraan', 'berita', 'informasi'));
+        return view('admin', compact('penumpang', 'kendaraan', 'berita', 'informasi', 'pesan'));
     }
 
     public function petugas(){
@@ -26,8 +28,9 @@ class CountController extends Controller
         $kendaraan = Kendaraan::count();
         $berita = Berita::count();
         $informasi = Informasi::count();
+        $pesan = Pesanan::count();
         // $penumpang = Penumpang::where('id',$id)->count();
         // $penumpang = DB:table('penumpangs')->count();
-        return view('petugass', compact('penumpang', 'kendaraan', 'berita', 'informasi'));
+        return view('petugass', compact('penumpang', 'kendaraan', 'berita', 'informasi', 'pesan'));
     }
 }

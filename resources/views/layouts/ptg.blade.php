@@ -216,6 +216,7 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+<script src="{{asset('js/sb-admin-2.min.js')}}"></script>
 <!-- Page specific script -->
 <script>
   $(function () {
