@@ -106,6 +106,10 @@
                 </p>
               </div>
             </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+              <div id="ml_4f0ebae5"><div style="padding:0;margin:0;" id="ml_4f0ebae5_i" v='1.1' a='{"t":"a","lang":"id","ids":["2375"],"a_bg":"#FFFFFF","a_br_c":"#FFB300","a_n_b":"#FFB300","a_icon":"#FFFFFF00","a_con":"#FFB300","a_inter":"#FFFFFF00","a_n_c":"#000000","a_icon_color":"#000000","a_con_c":"#000000","a_int_h_color":"#000000","a_int_temp_color":"#000000","p_w":236,"a_fn":"Arial"}'></div><div id="ml_4f0ebae5_c" style="padding:0;margin:0;padding:7px 5px;"><img src="https://cuacalab.id/assets/img/logo_z_b.svg" style=";vertical-align:baseline;padding:0;margin:0;width:15px;opacity:0.7;margin-right:5px;position:relative;top:1px;display:inline-block;"><a href="https://cuacalab.id/cuaca_medan/hari_ini/" style="color:grey;font-size:12px;text-decoration:none;" target="_blank" id="ml_4f0ebae5_u">Cuaca Hari ini</a></div></div><script async src="https://app.cuacalab.id/js/?id=ml_4f0ebae5"></script>
+            </div>
           </div>
         </div>
       </header>
@@ -169,7 +173,7 @@
                     <div class="col-md-8">
                       <div class="card-body">
                         <h5 class="card-title">{{$tentang->title}}</h5>
-                        <p class="card-text">{{ substr($tentang->description, 0, 90) }}...</p>
+                        <p class="card-text">{!! html_entity_decode(substr($tentang->description, 0, 90)) !!}...</p>
                         <hr />
                         <div class="row">
                           <div class="col">

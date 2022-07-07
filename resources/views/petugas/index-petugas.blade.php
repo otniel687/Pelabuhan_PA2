@@ -20,14 +20,15 @@
         </div>
     @endif
 @endsection
-@section('tabels')
+@section('tabel')
  <thead>
     <tr>
         <th>No</th>
         <th>Kode</th>
         <th>Tanggal</th>
+        <th>Nama</th>
         <th>Status</th>
-        <th>Konfirm Pembayaran</th>
+        <th>Konfirmasi Pembayaran</th>
         <th width="5%">Aksi</th>
     </tr>
 </thead>
@@ -37,6 +38,7 @@
             <td width="7%">{{ ++$i }}</td>
             <td>{{ $value->kode }}</td>
             <td>{{ $value->tanggal }}</td>
+            <td>{{ $value->nama }}</td>
             <td width="20%" class="text-center">
                 @if ($value->status_pembayaran == 0) 
                     <span class="badge badge-pill badge-danger">Belum Bayar</span>

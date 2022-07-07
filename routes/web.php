@@ -43,6 +43,7 @@ Route::get('/berita', [PenggunaController::class,'berita']);
 Route::get('/tentang', [PenggunaController::class,'tentang']);
 Route::get('/jadwal', [PenggunaController::class,'jadwal']);
 Route::get('/lokasi', [PenggunaController::class,'lokasi']);
+Route::get('galeri/show_galeri/{id}', [PenggunaController::class,'show_galeri']);
 Route::get('/galeri', [PenggunaController::class,'galeri']);
 Route::get('/tabel', [PenggunaController::class,'tabel']);
 Route::get('/pengumuman', [PenggunaController::class,'pengumuman']);

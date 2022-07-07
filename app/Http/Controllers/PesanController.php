@@ -20,9 +20,11 @@ class PesanController extends Controller
         $this->validate($request,[
             'tanggal' => 'required',
             'waktu' => 'required',
-            'nama' => 'required',
+            'nama' => 'required|min:5|max:20',
             'jenis' => 'required',
+            // 'lainnya' => 'nullable',
             'no_polisi' => 'nullable'
+
         ]);
 
         $kode = 'PMSN00'.Pesanan::all()->count() + 1;
@@ -39,14 +41,15 @@ class PesanController extends Controller
         $kendaraan->waktu = $data['waktu'];
         $kendaraan->nama = $data['nama'];
         $kendaraan->jenis = $data['jenis'];
+        // $kendaraan->lainnya = $data['lainnya'];
         $kendaraan->no_polisi = $data['no_polisi'];
         $kendaraan->save();
 
         $request->validate([
             'addMoreInputFields.*.nama' => 'required',
             'addMoreInputFields.*.jk' => 'required',
-            'addMoreInputFields.*.umur' => 'required',
-            'addMoreInputFields.*.alamat' => 'required',
+            'addMoreInputFields.*.umur' => 'required|min:2',
+            'addMoreInputFields.*.alamat' => 'required|min:5|max:20',
         ]);
      
         foreach ($request->addMoreInputFields as $key => $value) {

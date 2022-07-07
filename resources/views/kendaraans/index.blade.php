@@ -36,7 +36,19 @@
         <td>{{ $kendaraan->kode }}</td>
         <td>{{ $kendaraan->tanggal }}</td>
         <td>{{ $kendaraan->nama }}</td>
-        <td>{{ $kendaraan->jenis }}</td>
+        <td>
+            {{ $kendaraan->jenis }} 
+            {{-- <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bx bx-check" ></i>
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">{{ $kendaraan->lainnya}}</a></li>
+                </ul>
+            </div> --}}
+        </td>
+        {{-- <td>{{ $kendaraan->lainnya }}</td> --}}
         <td>{{ $kendaraan->no_polisi }}</td>
         <td>
             @if ($kendaraan->status_pembayaran == 1) 

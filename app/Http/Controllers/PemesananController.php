@@ -12,6 +12,7 @@ class PemesananController extends Controller
 {
     public function index() {
         $data['pemesanans'] = Pesanan::orderBy('id','desc')->simplePaginate(5);
+        $data['pemesanans'] = DB::table('kendaraans')->orderBy('pesanan_id', 'desc')->join('pesanans', 'pesanans.id', '=', 'kendaraans.pesanan_id')->simplePaginate(10);
         $data['detail'] = '/pemesanan/detail/';
         $data['verifikasi'] = '/pemesanan/verifikasi-pembayaran/';
         $data['delete'] = '/pemesanan/delete/';
@@ -33,6 +34,7 @@ class PemesananController extends Controller
 
     public function indexPetugas() {
         $data['pemesanans'] = Pesanan::orderBy('id','desc')->simplePaginate(5);
+        $data['pemesanans'] = DB::table('kendaraans')->orderBy('pesanan_id', 'desc')->join('pesanans', 'pesanans.id', '=', 'kendaraans.pesanan_id')->simplePaginate(10);
         $data['detail'] = '/pemesanan-petugas/detail/';
         $data['verifikasi'] = '/pemesanan-petugas/verifikasi-pembayaran/';
         $data['delete'] = '/pemesanan/delete/';

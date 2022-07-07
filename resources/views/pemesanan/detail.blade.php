@@ -69,6 +69,12 @@
                     <input type="text" name="no_polisi" class="form-control" value="{{ $pemesanan->kendaraan->no_polisi }}" disabled>
                 </div>
             </div>
+            {{-- <div class="col-6 pr-5">
+                <div class="form-group" id="lainnya">
+                    <strong>Jenis Kendaraan Lainnya</strong>
+                    <input type="text" name="no_polisi" class="form-control" value="{{ $pemesanan->kendaraan->lainnya }}" disabled>
+                </div>
+            </div> --}}
         </div>
         <div class="row mt-5">
             <div class="col-2">
